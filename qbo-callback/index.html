@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-hY9DzHeCAtMyQb8msjVKsJ4icR2OEPcdgs3PtyE8GvA='; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FP&amp;A Engine Sign-in</title>
+</head>
+<body>
+<p id="msg">Returning you to the FP&amp;A engine on this computer&hellip;</p>
+<noscript><p>JavaScript is required to finish signing in.</p></noscript>
+<script>
+  (function () {
+    var query = window.location.search;
+    if (query.length > 1) {
+      // Fixed target only: never a destination taken from the URL.
+      window.location.replace("http://localhost:8000/callback" + query);
+    } else {
+      document.getElementById("msg").textContent = "This page completes the FP&A engine's QuickBooks sign-in. There is nothing to do here.";
+    }
+  })();
+</script>
+</body>
+</html>
